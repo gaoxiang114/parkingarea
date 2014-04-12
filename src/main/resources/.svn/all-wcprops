@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/project/!svn/ver/449/library_xh/src/main/resources
+END
+applicationContext-mamcache.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/project/!svn/ver/50/library_xh/src/main/resources/applicationContext-mamcache.xml
+END
+mybatis.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/project/!svn/ver/397/library_xh/src/main/resources/mybatis.xml
+END
+applicationContext-freemarker.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/project/!svn/ver/111/library_xh/src/main/resources/applicationContext-freemarker.xml
+END
+data.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/project/!svn/ver/449/library_xh/src/main/resources/data.xml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/project/!svn/ver/414/library_xh/src/main/resources/log4j.properties
+END
+applicationContext-common.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/project/!svn/ver/321/library_xh/src/main/resources/applicationContext-common.xml
+END
+jdbc.properties
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/project/!svn/ver/188/library_xh/src/main/resources/jdbc.properties
+END
+mail.properties
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/project/!svn/ver/299/library_xh/src/main/resources/mail.properties
+END

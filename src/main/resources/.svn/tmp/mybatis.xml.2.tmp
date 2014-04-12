@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="com.cyou.library.xh.user.domain.User" alias="User" />
+		<typeAlias type="com.cyou.library.xh.common.util.Page" alias="Page" />
+		<typeAlias type="com.cyou.library.xh.book.domain.Book" alias="Book"/>
+		<typeAlias type="com.cyou.library.xh.book.domain.Order" alias="Order"/>
+		<typeAlias type="com.cyou.library.xh.book.domain.BookType" alias="BookType"/>
+		<typeAlias type="com.cyou.library.xh.user.domain.Role" alias="Role"/>
+		<typeAlias type="com.cyou.library.xh.user.domain.Fun" alias="Fun"/>
+		<typeAlias type="com.cyou.library.xh.user.domain.AssignRoles" alias="AssignRoles"/>
+		<typeAlias type="com.cyou.library.xh.user.domain.DivisionPower" alias="DivisionPower"/>
+		<typeAlias type="com.cyou.library.xh.borrow.domain.BorrowRecord" alias="BorrowRecord"/>
+
+		<typeAlias type="com.cyou.library.xh.recommand.domain.Recommand" alias="Recommand"/>
+<<<<<<< .mine
+		<typeAlias type="com.cyou.library.xh.mail.domain.Mail" alias="Mail"/>
+=======
+
+>>>>>>> .r330
+	</typeAliases>
+	
+
+	<mappers>
+		<mapper resource="com/cyou/library/xh/user/domain/User.xml" />
+		<mapper resource="com/cyou/library/xh/book/domain/Book.xml"/>
+		<mapper resource="com/cyou/library/xh/book/domain/Order.xml"/>
+		<mapper resource="com/cyou/library/xh/user/domain/Role.xml"/>
+		<mapper resource="com/cyou/library/xh/user/domain/Fun.xml"/>
+		<mapper resource="com/cyou/library/xh/user/domain/AssignRoles.xml"/>
+		<mapper resource="com/cyou/library/xh/user/domain/DivisionPower.xml"/>
+		<mapper resource="com/cyou/library/xh/borrow/domain/BorrowRecord.xml"/>
+
+		<mapper resource="com/cyou/library/xh/recommand/domain/Recommand.xml"/>
+<<<<<<< .mine
+		<mapper resource="com/cyou/library/xh/mail/domain/Mail.xml"/>
+=======
+
+>>>>>>> .r330
+	</mappers>
+</configuration>

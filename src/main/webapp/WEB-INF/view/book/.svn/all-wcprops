@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/project/!svn/ver/459/library_xh/src/main/webapp/WEB-INF/view/book
+END
+bookListFront.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/project/!svn/ver/277/library_xh/src/main/webapp/WEB-INF/view/book/bookListFront.ftl
+END
+test.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/project/!svn/ver/458/library_xh/src/main/webapp/WEB-INF/view/book/test.ftl
+END
+editBook.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/project/!svn/ver/314/library_xh/src/main/webapp/WEB-INF/view/book/editBook.ftl
+END
+searchBook.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/project/!svn/ver/459/library_xh/src/main/webapp/WEB-INF/view/book/searchBook.ftl
+END
+bookListFail.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/project/!svn/ver/357/library_xh/src/main/webapp/WEB-INF/view/book/bookListFail.ftl
+END
+editBookType.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/project/!svn/ver/361/library_xh/src/main/webapp/WEB-INF/view/book/editBookType.ftl
+END
+addBook.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/project/!svn/ver/359/library_xh/src/main/webapp/WEB-INF/view/book/addBook.ftl
+END
+addBookType.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/project/!svn/ver/360/library_xh/src/main/webapp/WEB-INF/view/book/addBookType.ftl
+END
+bookList.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/project/!svn/ver/448/library_xh/src/main/webapp/WEB-INF/view/book/bookList.ftl
+END
+bookTypeList.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/project/!svn/ver/448/library_xh/src/main/webapp/WEB-INF/view/book/bookTypeList.ftl
+END

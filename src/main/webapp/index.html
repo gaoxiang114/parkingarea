@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <title>主页</title>
+
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="description" content="This is my page">
+  </head>
+
+  <body>
+  		<h4>用户管理：</h4>
+  		人员管理：<br />
+  		&nbsp;<a href="user/toUserPageList">用户列表</a><br /> 
+  		&nbsp;角色管理： 		
+  		&nbsp;<a href="role/toRolePageList">角色列表</a><br />
+  		  功能管理：<br />
+  		&nbsp;<a href="fun/toAddFun">功能新增</a><br />
+  		&nbsp;<a href="fun/toFunList">功能列表</a><br />
+		<br/>
+  		&nbsp;<a href="role/ExportExcel">导出Excel</a><br />
+  		书籍管理：<br/>
+  		&nbsp;<a href="borrow/toSearchReturnBookPage">还书</a><br />
+  		&nbsp;<a href="personReader/toQuicklySearchBook">书籍检索</a><br />
+  		&nbsp;<a href="book/selectBookList">书藉列表</a><br />
+  		&nbsp;<a href="book/addPage">增加书藉</a><br />
+		类别管理：<br/>
+  		&nbsp;<a href="bookType/selectBookTypeList">类别列表</a><br />
+  		&nbsp;<a href="bookType/addPage">增加类别</a><br />
+
+  		前台用户：<br/>
+  		书籍管理前台：
+  		&nbsp;<a href="book/selectBookListFront"><br/>书藉列表</a><br />
+  		&nbsp;<a href="borrow/selectBorrowRecord">借书申请</a><br />
+		个人中心：<br/>
+		&nbsp;<a href="personReader/personBorrowing?userId=1">我读</a><br/>
+		&nbsp;<a href="user/getPersonMessage?userId=1">个人信息</a><br/>
+  		统计：<br/>
+  		&nbsp;<a href="countData/countBookByType">书库统计</a><br/>
+		&nbsp;<a href="countData/countBorrowState">按借阅人</a><br/>
+		&nbsp;<a href="countData/countBorrowByBook">按书籍</a><br/>
+		&nbsp;<a href="countData/purchaseCount">采购统计</a><br/>
+  		
+  </body>
+</html>

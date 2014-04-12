@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>tab</title>
+
+<style type="text/css">
+<!--
+body{/*css目的：设置全局属性*/
+    margin:100px 300px 200px 300px; /*定义tab选项卡的位置*/
+}
+#content{/*css目的：设置内容板块的基本样式*/
+    border-left:1px solid #0033FF;/*添加左边框*/
+border-right:1px solid #0033ff;/*添加右边框*/
+border-bottom:1px solid #0033ff;/*添加下边框*/
+padding:15px;/*内容距离边界空隙*/
+font-size:17px;/*字号*/
+}
+ul#tabul{/*css目的：设置无序列表的基本样式*/
+    list-style:none;/*去除无序列表前面的点*/
+margin:0px;
+padding-left:0px;/*列表元素距离左边的空隙*/
+padding-bottom:28px;/*列表元素距下边界的空隙*/
+font:bold 17px Arial, Helvetica, sans-serif;/*定义字体*/
+border-bottom:1px solid #0033ff;/*定义列表下边为框蓝色实线1像素*/
+}
+ul#tabul li{/*css目的：设置列表横排及基本的样式定义*/
+    float:left;/*设置列表向左浮动*/
+height:27px;
+margin:0px 4px 0px 0px;
+border:1px solid #0033ff;
+background:#00CCCC;
+}
+ul#tabul a:link,ul#tabul a:visited{/*设置链接以及访问过的样式*/
+    display:block;/*设置列表元素块状显示*/
+color:#0000CC;
+text-decoration:none;/*去掉下划线*/
+padding:5px 10px 3px 10px;
+}
+ul#tabul a:hover{/*设置鼠标经过时的特殊样式*/
+    background-color:#990000;/*背景颜色*/
+color:#FF0000;/*字体颜色*/
+}
+body#news li.news,body#yule li.yule,
+body#music li.music,body#movie li.movie,
+body#download li.download{/*重定义列表菜单*/
+    border-bottom:1px solid #ffffff;/*给块状菜单重新定义白色的下边框，起
+到覆盖原先定义的蓝色下边框*/
+color:#000000;
+background-color:#ffffff;
+}
+/*以下css代码为激活时菜单的超链接效果
+*************************************************************************
+****************/
+body#news li.news a:link,body#news li.news a:visited,
+body#yule li.yule a:link,body#yule li.yule,a:visited,
+body#music li.music a:link,body#music li.music a:visited,
+body#movie li.movie a:link,body#movie li.movie a:visited,
+body#download li.download a:link,body#download li.download a:visited{
+    color:#000000;
+
+}
+body#news li.news a:hover,
+body#yule li.yule a:hover,
+body#music li.music a:hover,
+body#movie li.movie a:hover,
+body#download li.download a:hover{
+    color:#0000cc;
+text-decoration:underline;
+}
+-->
+</style>
+</head>
+<body id="news">
+<!--无序列导航列表开始-->
+<ul id="tabul">
+    <li class="news"><a href="../../tab1.html"><SPAN 
+      style="FLOAT: left; BACKGROUND-IMAGE: url(file:///E|/images/main_hl2.gif); WIDTH: 15px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 47px"></SPAN><SPAN 
+      style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FLOAT: left; BACKGROUND-IMAGE: url(file:///E|/images/main_hb.gif); PADDING-BOTTOM: 10px; COLOR: white; PADDING-TOP: 10px; BACKGROUND-REPEAT: repeat-x; HEIGHT: 47px; TEXT-ALIGN: center; 0px: ">员工管理 </SPAN></a></li>
+    <li class="yule"><a href="../../tab2.html" target="_blank">娱乐</a></li>
+    <li class="music"><a href="../../tab3.html">音乐</a></li>
+    <li class="movie"><a href="../../tab4.html">影视</a></li>
+    <li class="download"><a href="../../tab5.html">下载</a></li>
+</ul>
+<!--无序列内容列表开始-->
+<div id="content"><!--具体内容-->
+  <p>酷扑工作室DIV+CSS系列教程之TAB滑动选项卡的实现方法</p>
+  <p>希望大家支持phpcms、支持酷扑工作室</p>
+  <p>在phpcms2008到来的日子里，我还将继续奉献完美的教程给大家！^_^</p>
+</div>
+</body>
+</html>

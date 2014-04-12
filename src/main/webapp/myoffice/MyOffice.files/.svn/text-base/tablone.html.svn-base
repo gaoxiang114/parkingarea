@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../../css/tab.css" rel="stylesheet" type="text/css" />
+</head>
+	
+      
+     
+<body style="BACKGROUND-POSITION-Y: -120px;BACKGROUND-IMAGE: url(../images/bg.gif); BACKGROUND-REPEAT: repeat-x">
+	<div>
+        <a href="" style="color:blue;">
+			<SPAN class="left_tab"></SPAN>
+			<SPAN class="midel_tab">员工管理</SPAN>
+			<SPAN class="rigth_tab"></SPAN>
+		</a>
+		<a href="#">
+			<SPAN class="left_tab"></SPAN>
+			<SPAN class="midel_tab">员工管理</SPAN>
+			<SPAN class="rigth_tab"></SPAN>
+		</a>
+		<a href="#">
+			<SPAN class="left_tab"></SPAN>
+			<SPAN class="midel_tab">员工管理</SPAN>
+			<SPAN class="rigth_tab"></SPAN>
+		</a>
+	</div>
+    <div>
+    </div>
+</body>
+</html>

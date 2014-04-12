@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/project/!svn/ver/393/library_xh/src/main/java/com/cyou/library/xh/borrow/domain
+END
+BorrowRecordList.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/project/!svn/ver/385/library_xh/src/main/java/com/cyou/library/xh/borrow/domain/BorrowRecordList.java
+END
+BorrowRecord.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/project/!svn/ver/393/library_xh/src/main/java/com/cyou/library/xh/borrow/domain/BorrowRecord.xml
+END
+BorrowRecord.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/project/!svn/ver/353/library_xh/src/main/java/com/cyou/library/xh/borrow/domain/BorrowRecord.java
+END
+ReturnBook.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/project/!svn/ver/353/library_xh/src/main/java/com/cyou/library/xh/borrow/domain/ReturnBook.xml
+END
+ReturnBook.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/project/!svn/ver/353/library_xh/src/main/java/com/cyou/library/xh/borrow/domain/ReturnBook.java
+END

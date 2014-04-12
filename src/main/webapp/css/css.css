@@ -1,0 +1,79 @@
+#container #header {
+	height: 150px;
+	width: 961px;
+	background-image: url(../img/head.png);
+}
+#container #header #title {
+	padding-top: 30px;
+	padding-left: 315px;
+	float: left;
+}
+#container #header #login {
+	float: right;
+	margin-top: 12px;
+	margin-right: 12px;
+}
+
+#container #nav {
+	width: 142px;
+	height:870px;
+	float: left;
+	border: thin dotted #000;
+}
+#container #maincontent {
+	width: 819px;
+	height:870px;
+	margin-left: 142px;
+	border: thin dashed #000;
+	
+}
+#container #footer {
+	height: 108px;
+	width: 961px;
+	
+	background-image: url(../img/tail.png);
+}
+
+#container {
+	width: 961px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#container #nav #menu ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+#container #nav #menu ul li {
+	line-height: 40px;
+	background-color: #eee;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #ccc;
+	text-align: center;
+	vertical-align: middle;
+	height: 40px;
+}
+#container #nav #menu ul li a {
+	text-decoration: none;
+}
+#container #nav #menu .mainmenu {
+	background-color: #996;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+
+#container #nav #menu {
+	border: 0px none #ccc;
+	width: 142px;
+	;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#container #header #img {
+	margin: 10px;
+}

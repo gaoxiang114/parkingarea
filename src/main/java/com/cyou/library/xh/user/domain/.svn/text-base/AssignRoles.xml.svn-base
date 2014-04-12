@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cyou.library.xh.user.dao.AssignRolesDao">
+
+	<resultMap type="AssignRoles" id="assignRolesMap">
+		<id property="assignId" column="assign_id"></id>
+		<id property="userId" column="user_id"></id>
+		<id property="roleId" column="role_id"></id>
+	</resultMap>
+	
+	<insert id="addAssignRoles" parameterType="AssignRoles">
+		insert into t_assignroles(user_id,role_id) values (#{userId},#{roleId});
+	</insert>
+
+	<insert id="addAssignRolesList" parameterType="list">
+		insert into t_assignroles(user_id,role_id) values 
+				<foreach collection="list" item="item" index="index" separator=",">  
+            		(#{item.userId},#{item.roleId})  
+        		</foreach>  
+	</insert>
+	
+	<delete id="delAssignRolesList" parameterType="list" >
+		DELETE FROM t_assignroles WHERE	assign_id in
+			<foreach collection="list" item="item"  open="(" separator="," close=")">
+			 	#{item.assignId}
+			</foreach>
+	</delete>
+	
+	<select id="getRolesList" parameterType="AssignRoles" resultType="Role">
+		select a.role_id as roleId,role_name as roleName from t_assignroles as a,t_role where a.role_id = t_role.role_id and user_id = #{userId};
+	</select>
+
+	<select id="getAssignRoles" parameterType="AssignRoles" resultMap="assignRolesMap">
+		select assign_id,user_id,role_id from t_assignroles where user_id=#{userId};
+	</select>
+<!-- 	<select id="getAssignRoles" parameterType="AssignRoles" resultType="Role">
+		select assign_id from t_assignroles where user_id=#{userId} and role_id =#{roleId};
+	</select> -->
+</mapper>

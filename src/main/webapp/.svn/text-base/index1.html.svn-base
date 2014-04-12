@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div id="container">
+  		<div id="header" >
+		
+            	<div id="title" ><font style="font-size:37px;font-weight:bold;">网研图书管理系统</font></div>
+                <div id="login" >
+                	<font style="font-size:8px;">尊敬的 <a href="">邓雯娟</a>，欢迎您！ <a href="">退出</a></font>
+                </div>
+            </div>
+			
+   		
+
+		<div id="nav">
+           <div id="menu" >
+           		<div class="mainmenu">普通用户功能</div>
+                <ul>
+                    <li><a href="#"><span>个人中心</span></a></li>
+                    <li><a href="#"><span>图书列表</span></a></li>
+                     <li><a href="#"><span>新书推荐</span></a></li>
+                     <li><a href="#"><span>推荐购书</span></a></li>
+                </ul>
+                <div class="mainmenu">系统功能</div>
+                <ul>
+                    <li><a href="#"><span>书藉管理</span></a></li>
+                    <li><a href="#"><span>用户管理</span></a></li>
+                     <li><a href="#"><span>邮件管理</span></a></li>
+                     <li><a href="#"><span>数据统计</span></a></li>
+                </ul>
+            </div>
+   		 </div>
+      	 <div id="maincontent">
+       		
+     	 </div>
+  	  	 <div id="footer">
+         	
+         </div>
+	</div>
+</body>
+</html>

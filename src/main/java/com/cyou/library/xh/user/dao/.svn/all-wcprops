@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/project/!svn/ver/466/library_xh/src/main/java/com/cyou/library/xh/user/dao
+END
+UserDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/project/!svn/ver/466/library_xh/src/main/java/com/cyou/library/xh/user/dao/UserDao.java
+END
+RoleDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/project/!svn/ver/248/library_xh/src/main/java/com/cyou/library/xh/user/dao/RoleDao.java
+END
+DivisionPowerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/project/!svn/ver/365/library_xh/src/main/java/com/cyou/library/xh/user/dao/DivisionPowerDao.java
+END
+FunDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/project/!svn/ver/466/library_xh/src/main/java/com/cyou/library/xh/user/dao/FunDao.java
+END
+AssignRolesDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/project/!svn/ver/365/library_xh/src/main/java/com/cyou/library/xh/user/dao/AssignRolesDao.java
+END

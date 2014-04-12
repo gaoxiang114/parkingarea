@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>无标题页</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="MSHTML 6.00.2900.5848" name=GENERATOR>
+<link href="../css/left_nav.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY 
+style="BACKGROUND-POSITION-Y: -120px; BACKGROUND-IMAGE: url(../myoffice/images/bg.gif); BACKGROUND-REPEAT: repeat-x">
+<TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+    <TR>
+      <TD width=10 height=29><IMG src="../myoffice/MyOffice.files/Left.files/bg_left_tl.gif"></TD>
+      <TD 
+    style="FONT-SIZE: 18px; BACKGROUND-IMAGE: url(../myoffice/images/bg_left_tc.gif); COLOR: white; FONT-FAMILY: system">Main 
+        Menu</TD>
+      <TD width=10><IMG src="../myoffice/MyOffice.files/Left.files/bg_left_tr.gif"></TD>
+    </TR>
+    <TR>
+      <TD style="BACKGROUND-IMAGE: url(../myoffice/images/bg_left_ls.gif)"></TD>
+      <TD id=menuTree 
+    style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-TOP: 10px; HEIGHT: 100%; BACKGROUND-COLOR: white" 
+    vAlign=top>
+          <div class="contentleft">
+           		<span>普通用户功能</span>
+                <ul>
+                    <li><a id="fd" href="#">个人中心</a></li>
+                    <li><a href="#">图书列表</a></li>
+                     <li><a href="#">新书推荐</a></li>
+                     <li><a href="#">推荐购书</a></li>
+                </ul>
+                <span>系统功能</span>
+                <ul>
+                    <li><a href="../book/selectBookList" target="mainFrame">书藉管理</a></li>
+                    <li><a href="#">用户管理</a></li>
+                     <li><a href="#">邮件管理</a></li>
+                     <li><a href="#">数据统计</a></li>
+                </ul>
+            </div>
+    
+    </TD>
+      <TD style="BACKGROUND-IMAGE: url(../myoffice/images/bg_left_rs.gif)"></TD>
+    </TR>
+    <TR>
+      <TD width=10><IMG src="../myoffice/MyOffice.files/Left.files/bg_left_bl.gif"></TD>
+      <TD style="BACKGROUND-IMAGE: url(../myoffice/images/bg_left_bc.gif)"></TD>
+      <TD width=10><IMG 
+src="../myoffice/MyOffice.files/Left.files/bg_left_br.gif"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>

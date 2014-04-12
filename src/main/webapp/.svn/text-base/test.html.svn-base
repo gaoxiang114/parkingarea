@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Dialog - Modal form</title>
+	<link rel="stylesheet" href="dialog/themes/base/jquery.ui.all.css">
+	<script src="js/jquery-1.8.3.js"></script>
+	<script src="dialog/external/jquery.bgiframe-2.1.2.js"></script>
+	<script src="dialog/ui/jquery.ui.core.js"></script>
+	<script src="dialog/ui/jquery.ui.widget.js"></script>
+	<script src="dialog/ui/jquery.ui.mouse.js"></script>
+	<script src="dialog/ui/jquery.ui.button.js"></script>
+	<script src="dialog/ui/jquery.ui.draggable.js"></script>
+	<script src="dialog/ui/jquery.ui.position.js"></script>
+	<script src="dialog/ui/jquery.ui.resizable.js"></script>
+	<script src="dialog/ui/jquery.ui.dialog.js"></script>
+	<script src="dialog/ui/jquery.ui.effect.js"></script>
+	<link rel="stylesheet" href="dialog/css/demos.css">
+	<style>
+		body { font-size: 62.5%; }
+		label, input { display:block; }
+		input.text { margin-bottom:12px; width:95%; padding: .4em; }
+		fieldset { padding:0; border:0; margin-top:25px; }
+		h1 { font-size: 1.2em; margin: .6em 0; }
+		div#users-contain { width: 700px; margin: 20px 0; }
+		div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+		div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+		.ui-dialog .ui-state-error { padding: .3em; }
+		.validateTips { border: 1px solid transparent; padding: 0.3em; }
+	</style>
+	<script>
+	$(function() {
+
+		$( "#dialog-form" ).dialog({
+			autoOpen: false,
+			height: 300,
+			width: 350,
+			modal: true,
+			buttons: {
+				"确定": function() {
+					$( this ).dialog( "close" );
+				},
+				"返回": function() {
+					$( this ).dialog( "close" );
+				}
+			},
+			close: function() {
+				allFields.val( "" ).removeClass( "ui-state-error" );
+			}
+		});
+
+		$( "#income" )
+			.button()
+			.click(function() {
+				$( "#dialog-form" ).dialog( "open" );
+		});
+	});
+	</script>
+</head>
+<body>
+
+<div id="dialog-form" class="ui-widget" title="图书列表">
+
+	<form>
+	
+	<div id="users-contain" class="ui-widget">
+	<h1>Existing Users:</h1>
+	<table id="users" class="ui-widget ui-widget-content">
+		<thead>
+			<tr class="ui-widget-header ">
+				<th>Name</th>
+				<th>Email</th>
+				<th>Password</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>John Doe</td>
+				<td>john.doe@example.com</td>
+				<td>johndoe1</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+	</form>
+</div>
+
+
+<div id="users-contain" class="ui-widget">
+	<h1>Existing Users:</h1>
+	<table id="users" class="ui-widget ui-widget-content">
+		<thead>
+			<tr class="ui-widget-header ">
+				<th>Name</th>
+				<th>Email</th>
+				<th>Password</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>John Doe</td>
+				<td>john.doe@example.com</td>
+				<td>johndoe1</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<button id="income">入库</button>
+
+<div class="demo-description">
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web>
+	<data id="0" name="数据">
+	
+		<type id="1" name="returnBookDay" value="30" parentId="0">
+			<childType id="2" name="借书天数" value="30" parentId="1"></childType>
+		</type>
+	
+		<type id="3" name="recommandState" value="-1" parentId="0">
+			<childType id="4" name="未处理" value="0" parentId="3"></childType>
+			<childType id="5" name="处理中" value="1" parentId="3"></childType>
+			<childType id="6" name="处理失败" value="2" parentId="3"></childType>
+			<childType id="7" name="购买中" value="3" parentId="3"></childType>
+			<childType id="8" name="购买成功" value="4" parentId="3"></childType>
+			<childType id="9" name="购买失败" value="5" parentId="3"></childType>
+			<childType id="10" name="已入库" value="6" parentId="3"></childType>
+		</type>
+		
+		<type id="3" name="exportRecommand" value="-1" parentId="0">
+			<childType id="4" name="bookName" value="书名" parentId="3"></childType>
+			<childType id="5" name="bookAuthor" value="作者" parentId="3"></childType>
+			<childType id="6" name="bookPublish" value="出版社" parentId="3"></childType>
+			<childType id="7" name="buyUrl" value="购买的链接" parentId="3"></childType>
+			<childType id="8" name="userName" value="推荐人" parentId="3"></childType>
+			<childType id="9" name="bookPrice" value="图书单价" parentId="3"></childType>
+		</type>
+	</data>
+</web>

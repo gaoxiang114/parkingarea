@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cyou.library.xh.user.dao.DivisionPowerDao">
+
+	<resultMap type="DivisionPower" id="divisonPowerMap">
+		<id property="divisionId" column="division_id"></id>
+		<id property="roleId" column="role_id"></id>
+		<id property="funId" column="fun_id"></id>
+	</resultMap>
+
+	<select id="getDivisionPowerByRoleId" parameterType="Role" resultMap="divisonPowerMap">
+		select division_id,role_id,fun_id from t_divisionpower where role_id = #{roleId};
+	</select>
+	<select id="getDivisionPowers" parameterType="Role" resultMap="divisonPowerMap">
+		select division_id,role_id,fun_id from t_divisionpower;
+	</select>
+
+	<insert id="addDivisionPowerList" parameterType="list">
+		insert into t_divisionpower(role_id,fun_id) values 
+				<foreach collection="list" item="item" index="index" separator=",">  
+            		(#{item.roleId},#{item.funId})  
+        		</foreach>  
+	</insert>
+	
+	<delete id="delDivisionPowerList" parameterType="list" >
+		DELETE FROM t_divisionpower WHERE division_id in
+			<foreach collection="list" item="item"  open="(" separator="," close=")">
+			 	#{item.divisionId}
+			</foreach>
+	</delete>
+	
+</mapper>

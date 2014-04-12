@@ -1,0 +1,31 @@
+/* css document */
+
+ .left_tab{
+	 
+	 float: left; 
+	 background-image: url(../myoffice/images/main_hl2.gif); 
+	 width: 15px;
+	  background-repeat: no-repeat; 
+	  height: 47px;
+ }
+ .midel_tab{
+	 padding-right: 10px;
+	  padding-left: 10px; 
+	  float: left; 
+	  background-image: url(../myoffice/images/main_hb.gif);
+	   padding-bottom: 10px; color: white;
+	    padding-top: 10px; 
+	   background-repeat: repeat-x;
+	    height: 47px;
+		 text-align: center;
+ }
+ .rigth_tab{
+	float: left;
+	 background-image: url(../myoffice/images/main_hr.gif);
+	  width: 60px; 
+	  background-repeat: no-repeat; 
+	  height: 47px;
+ }
+a:hover .midel_tab{
+ 	text-decoration: underline;
+ }
