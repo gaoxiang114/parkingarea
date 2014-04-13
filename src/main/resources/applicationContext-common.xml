@@ -1,20 +1,27 @@
- <beans xmlns="http://www.springframework.org/schema/beans"  
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
-    xmlns:context="http://www.springframework.org/schema/context"  
-    xmlns:aop="http://www.springframework.org/schema/aop"  
-    xmlns:tx="http://www.springframework.org/schema/tx"  
-    xsi:schemaLocation="http://www.springframework.org/schema/beans   
-           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd  
-           http://www.springframework.org/schema/context  
-           http://www.springframework.org/schema/context/spring-context-2.5.xsd  
-           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd  
-           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">  
-   
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
-	<context:property-placeholder location="classpath:jdbc.properties"/>  
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+				<!-- <value>classpath:memcache.properties</value>  -->
+			</list>
+		</property>
+	</bean>  
+    
+    <context:component-scan base-package="com.parkarea.*.dao"/>
+    <context:component-scan base-package="com.parkarea.*.service"/>
      
-     <context:component-scan base-package="com.cyou.library.xh.*.dao"/>
-      <context:component-scan base-package="com.cyou.library.xh.*.service"/>
     <!-- 配置DataSource数据源 -->
     
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">  
@@ -37,11 +44,11 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
     
-     <aop:aspectj-autoproxy />
-     <aop:config>                                               
-       <aop:pointcut id="serviceMethods" expression="execution(* com.cyou.library.xh.*.service.impl.*(..))"/>  
+    <aop:aspectj-autoproxy/>
+    <aop:config>               
+       <aop:pointcut id="serviceMethods" expression="execution(* com.parkarea.*.service.*(..))"/>  
        <aop:advisor advice-ref="tmAdivice" pointcut-ref="serviceMethods"/>    
-     </aop:config> 
+    </aop:config>
     
     <tx:advice id="tmAdivice" transaction-manager="transactionManager">  
        <tx:attributes>
@@ -50,8 +57,7 @@
            <tx:method name="del*" isolation="DEFAULT" propagation="REQUIRED" rollback-for="RuntimeException"/>
         <tx:method name="*" read-only="true"/>
        </tx:attributes>
-    </tx:advice>
-         
+    </tx:advice>    
     
     <!-- 配置SqlSessionFactoryBean -->
    
@@ -59,10 +65,4 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:mybatis.xml" />
 	</bean>
-	
-	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-	</bean>
-	
-	<bean id="spring" class="com.cyou.library.xh.common.util.SpringUtil" lazy-init="default" autowire="default" dependency-check="default" /> 
-	
 </beans>
