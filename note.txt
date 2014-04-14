@@ -1,7 +1,0 @@
-1.不要改写BaseDao中的代码，如果方法不满足，在自己的dao里写
-2.必须继承BaseDao类，并且写自己的dao
-3.每个实体Bean要实现Serialiable接口，equals方法，toString方法
-4.Controller、Service中都要加注释
-5.注意代码规范，不要随意命名，js命名一律小写，每个单词间用下划线分割,ftl文件采用驼峰式命名法
-6.js尽量不要写在ftl里，单独提出来、
-7.每个页面都引用common.js

@@ -4,10 +4,12 @@
 
 	<typeAliases>
 		<typeAlias type="com.parkarea.user.model.User" alias="User"/>
+		<typeAlias type="com.parkarea.park.model.CarInOut" alias="CarInOut"/>
 	</typeAliases>
 	
 
 	<mappers>
 		<mapper resource="/mappers/user.xml" />
+		<mapper resource="/mappers/car_in_out.xml"/>
 	</mappers>
 </configuration>

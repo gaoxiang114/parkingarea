@@ -40,7 +40,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${req.contextPath}/images/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="${req.contextPath}/images/assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
-
+ 
   <body class=""> 
 		    <%@ include file="menu.jsp"%>
 		    <div class="content">

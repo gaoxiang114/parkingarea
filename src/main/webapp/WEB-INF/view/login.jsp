@@ -52,7 +52,7 @@
     </div>
     
     <div class="row-fluid">
-    <div class="dialog">
+    <div class="dialog"> 
         <div class="block">
             <p class="block-heading">北京万佳信科技有限公司</p>
             <div class="block-body">
@@ -61,9 +61,6 @@
                     <input type="text" name="username" class="span12">
                     <label>密  码：</label>
                     <input type="password" name="passwd" class="span12">
-                    <input type="text" name="userName" class="span12">
-                    <label>密  码：</label>
-                    <input type="password" name="password" class="span12">
                     <input type="submit" class="btn btn-primary pull-right" value="登录"/>
                     <label class="remember-me"><input type="checkbox"> 记住我</label>
                     <div class="clearfix"></div>

@@ -13,7 +13,7 @@ public class BaseDao extends SqlSessionDaoSupport {
 	 * @param entity
 	 * @return
 	 */
-	public int add(String method,Object entity){
+	protected int add(String method,Object entity){
 		return this.getSqlSession().insert(method, entity);
 	}
 	/**
@@ -23,7 +23,7 @@ public class BaseDao extends SqlSessionDaoSupport {
 	 * @param entity
 	 * @return Integer
 	 */
-	public int delete(String method,Object entity){
+	protected int delete(String method,Object entity){
 		return this.getSqlSession().delete(method, entity);
 	}
 
@@ -34,7 +34,7 @@ public class BaseDao extends SqlSessionDaoSupport {
 	 * @param entity
 	 * @return Integer
 	 */
-	public int delete(String method){
+	protected int delete(String method){
 		return this.getSqlSession().delete(method);
 	}
 
@@ -44,7 +44,7 @@ public class BaseDao extends SqlSessionDaoSupport {
 	 * @param method
 	 * @return
 	 */
-	public int update(String method){
+	protected int update(String method){
 		return this.getSqlSession().update(method);
 	}
 	/**
@@ -54,7 +54,7 @@ public class BaseDao extends SqlSessionDaoSupport {
 	 * @param object
 	 * @return
 	 */
-	public int update(String method,Object object){
+	protected int update(String method,Object object){
 		return this.getSqlSession().update(method, object);
 	}
 
