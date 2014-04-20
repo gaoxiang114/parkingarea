@@ -1,6 +1,8 @@
 package com.parkarea.park.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.parkarea.park.model.CarInOut;
 
@@ -19,4 +21,8 @@ public interface CarInOutService {
 	public List<CarInOut> getCarInOutPageList(int pageIndex, int pageSize,CarInOut carInOut);
 	
 	public Integer getAllCount();
+	
+	public List<CarInOut> getHistoryList(int pageIndex, int pageSize,CarInOut carInOut);
+	
+	public Integer getHistoryAllCount();
 }

@@ -28,7 +28,8 @@
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>系统管理</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
             <li id="1"><a href="${req.contextPath}/carInOut/carInOutList">进出车管理</a></li>
-            <li id="2"><a href="${req.contextPath}/manager/product/productList?tab=2">历史记录</a></li>
+            <li id="2"><a href="${req.contextPath}/position/positionList">停车位管理</a></li>
+            <li id="3"><a href="${req.contextPath}/carInOut/historyList">历史管理</a></li>
             <li id="3"><a href="${req.contextPath}/manager/solution/solutionList?tab=3">统计分析</a></li>
             <li id="4"><a href="${req.contextPath}/manager/services/servicesList?tab=4">系统设置</a></li>
         </ul>

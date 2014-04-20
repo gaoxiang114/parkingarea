@@ -44,6 +44,9 @@ public class CarInOutDao extends BaseDao {
 		    	Map<String,Object> map = new HashMap<String,Object>();
 		    	map.put("pageIndex", pageIndex*pageSize);
 		    	map.put("pageSize", pageSize);
+		    	map.put("carNum", carInOut.getCarNum());
+		    	map.put("realname", carInOut.getRealname());
+		    	map.put("idCard", carInOut.getIdCard());
 		    	
 			    if(-1 == pageIndex && 0 == pageSize){
 			    	list = this.getList("getCarInOutPageList", map);
@@ -57,7 +60,34 @@ public class CarInOutDao extends BaseDao {
 			return  list;
 	}
 	
+	public List<CarInOut> getHistoryList(int pageIndex, int pageSize,CarInOut carInOut){
+		 List<CarInOut> list = null;
+		    
+		    try {
+		    	Map<String,Object> map = new HashMap<String,Object>();
+		    	map.put("pageIndex", pageIndex*pageSize);
+		    	map.put("pageSize", pageSize);
+		    	map.put("carNum", carInOut.getCarNum());
+		    	map.put("realname", carInOut.getRealname());
+		    	map.put("idCard", carInOut.getIdCard());
+		    	
+			    if(-1 == pageIndex && 0 == pageSize){
+			    	list = this.getList("getHistoryList", map);
+			    }else{
+			    	list = this.getList("getHistoryList", map);
+			    }
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			
+			return  list;
+	}
+	
+	public Integer getHistoryAllCount(){
+		return this.getCount("getHistoryAllCount");
+	}
+	
 	public Integer getAllCount(){
-		return this.getCount("getAllCount");
+		return this.getCount("getCarInOutCounts");
 	}
 }

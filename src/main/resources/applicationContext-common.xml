@@ -65,4 +65,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:mybatis.xml" />
 	</bean>
+	
+	<bean id="spring" class="com.parkarea.common.util.SpringUtil" lazy-init="default" autowire="default" dependency-check="default" />
+	
 </beans>

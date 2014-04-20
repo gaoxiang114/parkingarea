@@ -1,6 +1,7 @@
 package com.parkarea.park.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class CarInOut implements Serializable{
 
@@ -12,8 +13,8 @@ public class CarInOut implements Serializable{
 	private String realname;
 	private String telephone;
 	private int parkingId;
-	private String startTime;
-	private String endTime;
+	private Date startTime;
+	private Date endTime;
 	private String status;
 	private Double priceHour;
 	private Double totalPrice;
@@ -54,18 +55,6 @@ public class CarInOut implements Serializable{
 	public void setParkingId(int parkingId) {
 		this.parkingId = parkingId;
 	}
-	public String getStartTime() {
-		return startTime;
-	}
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-	public String getEndTime() {
-		return endTime;
-	}
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
 	public String getStatus() {
 		return status;
 	}
@@ -84,5 +73,16 @@ public class CarInOut implements Serializable{
 	public void setTotalPrice(Double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-	
+	public Date getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+	public Date getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
 }

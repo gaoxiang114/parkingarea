@@ -52,4 +52,14 @@ public class CarInOutServiceImpl implements CarInOutService {
 		return this.carInOutDao.getAllCount();
 	}
 
+	@Override
+	public List<CarInOut> getHistoryList(int pageIndex, int pageSize,CarInOut carInOut) {
+		return this.carInOutDao.getHistoryList(pageIndex, pageSize, carInOut);
+	}
+
+	@Override
+	public Integer getHistoryAllCount() {
+		return this.getAllCount();
+	}
+
 }

@@ -21,26 +21,51 @@
 	</sql>
 
 	<insert id="addCarInOut" parameterType="CarInOut">
-		insert into car_in_out(<include refid="carInOutColumns"/>) values(#{carNum},#{idCard},#{realname},#{telephone},curdate(),curdate(),#{parkingId},#{status},#{priceHour},0.0)
+		insert into car_in_out(car_num,id_card,realname,telephone,start_time,end_time,parking_id,status,price_hour,total_price) values(#{carNum},#{idCard},#{realname},#{telephone},curdate(),curdate(),#{parkingId},0,#{priceHour},0.0)
 	</insert>
 	
 	<update id="updateCarInOut" parameterType="CarInOut">
+		update car_in_out set status=#{status},end_time=curdate(),total_price=#{totalPrice} where id = #{id} and status=0
 	</update>
 	
 	<select id="getCarInOutList" resultMap="carInOutMap">
-		select <include refid="carInOutColumns"/> from car_in_out
+		select <include refid="carInOutColumns"/> from car_in_out where status = 0
 	</select>
 	
 	<select id="getCarInOutPageList" resultMap="carInOutMap" parameterType="java.util.Map">
-		select <include refid="carInOutColumns"/> from car_in_out limit #{pageIndex},#{pageSize}
+		select <include refid="carInOutColumns"/> from car_in_out
+		<where>
+			status = 0
+			<if test="carNum!=null and carNum!=''"> and car_num = #{carNum} </if>
+			<if test="realname!=null and realname!=''"> and realname = #{realname} </if>
+			<if test="idCard!=null and idCard!=''"> and id_card = #{idCard} </if>
+		</where>
+		
+		limit #{pageIndex},#{pageSize}
 	</select>
 	
-	<select id="getAllCount" resultType="Integer">
-		select count(*) from car_in_out
+	<select id="getHistoryList" resultMap="carInOutMap" parameterType="java.util.Map">
+		select <include refid="carInOutColumns"/> from car_in_out
+		<where>
+			status = 1
+			<if test="carNum!=null and carNum!=''"> and car_num = #{carNum} </if>
+			<if test="realname!=null and realname!=''"> and realname = #{realname} </if>
+			<if test="idCard!=null and idCard!=''"> and id_card = #{idCard} </if>
+		</where>
+		
+		limit #{pageIndex},#{pageSize}
+	</select>
+	
+	<select id="getCarInOutCounts" resultType="Integer">
+		select count(*) from car_in_out where status = 0
+	</select>
+	
+	<select id="getHistoryAllCount" resultType="Integer">
+		select count(*) from car_in_out where status = 0
 	</select>
 	
 	<select id="getCarInOutById" resultMap="carInOutMap" parameterType="java.lang.Integer">
-		select role_id,role_name,role_desc from car_in_out where id = #{id}
+		select <include refid="carInOutColumns"/> from car_in_out where id = #{id} and status=0
 	</select>
 	
 	<delete id="delCarInOut" parameterType="list" >
@@ -49,6 +74,7 @@
 		<foreach collection="list" item="id"  open="(" separator="," close=")">
 			 #{id}
 		</foreach>
+		where status = 0
 	</delete>
 	
 </mapper>
