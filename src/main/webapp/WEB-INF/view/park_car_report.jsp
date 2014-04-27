@@ -56,8 +56,8 @@
 				    	   /*****************************************start******************************************/
 				    	   $("#type").html(result.data[0].name);
 				    	   $("#type1").html(result.data[1].name);
-				    	   $("#count").html(result.data[0].value);
-				    	   $("#count1").html(result.data[1].value);
+				    	   $("#count").html(result.data[0].value+"&nbsp;辆");
+				    	   $("#count1").html(result.data[1].value+"&nbsp;辆");
 				    	   var data = result.data;
 							
 							var chart = new iChart.Pie3D({

@@ -21,7 +21,7 @@
     </div>
     
     <div class="sidebar-nav">
-        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard">${parkingLot}</i></a>
+        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse">&nbsp;&nbsp;${parkingLot}</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
             <li id="1"><a href="${req.contextPath}/carInOut/carInOutList">进出车管理</a></li>
             <li id="2"><a href="${req.contextPath}/position/positionList">停车位管理</a></li>
