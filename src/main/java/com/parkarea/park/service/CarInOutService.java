@@ -1,6 +1,5 @@
 package com.parkarea.park.service;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,9 +19,15 @@ public interface CarInOutService {
 	
 	public List<CarInOut> getCarInOutPageList(int pageIndex, int pageSize,CarInOut carInOut);
 	
-	public Integer getAllCount();
+	public Integer getAllCount(CarInOut carInOut);
 	
 	public List<CarInOut> getHistoryList(int pageIndex, int pageSize,CarInOut carInOut);
 	
-	public Integer getHistoryAllCount();
+	public Integer getHistoryAllCount(CarInOut carInOut);
+	
+	public Map<String,Object> countParkCarNum();
+	
+	public Map<String,Object> countParkMoney();
+	
+	public Integer checkCarPark(String carNum);
 }

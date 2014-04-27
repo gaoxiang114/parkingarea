@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.parkarea.system.dao.SystemDao">
+
+	<resultMap type="SystemInfo" id="systemInfoMap">
+		<id property="sysId" column="sys_id"/>
+		<result property="parkingLot" column="parking_lot"/>
+		<result property="parkingCount" column="parking_count"/>
+		<result property="parkingMoney" column="parking_money"/>
+	</resultMap>
+	
+	<sql id="systemInfoColumns">
+		sys_id,parking_lot,parking_count,parking_money
+	</sql>
+
+	<select id="getSystemInfoById" parameterType="int" resultMap="systemInfoMap">
+		select <include refid="systemInfoColumns"/> from sys_info
+	</select>
+	
+	<update id="updateSystemInfo" parameterType="SystemInfo">
+		update sys_info
+			<set>
+				<if test="parkingLot!=null">parking_lot=#{parkingLot},</if>
+				<if test="parkingMoney!=null">parking_money=#{parkingMoney}</if>
+			</set>
+	</update>
+	
+</mapper>

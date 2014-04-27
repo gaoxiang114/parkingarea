@@ -3,6 +3,8 @@ package com.parkarea.park.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.parkarea.position.model.ParkingPosition;
+
 public class CarInOut implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -12,12 +14,12 @@ public class CarInOut implements Serializable{
 	private String idCard;
 	private String realname;
 	private String telephone;
-	private int parkingId;
 	private Date startTime;
 	private Date endTime;
 	private String status;
 	private Double priceHour;
 	private Double totalPrice;
+	private ParkingPosition position;
 	
 	public int getId() {
 		return id;
@@ -49,12 +51,6 @@ public class CarInOut implements Serializable{
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-	public int getParkingId() {
-		return parkingId;
-	}
-	public void setParkingId(int parkingId) {
-		this.parkingId = parkingId;
-	}
 	public String getStatus() {
 		return status;
 	}
@@ -85,4 +81,11 @@ public class CarInOut implements Serializable{
 	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
+	public ParkingPosition getPosition() {
+		return position;
+	}
+	public void setPosition(ParkingPosition position) {
+		this.position = position;
+	}
+	
 }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.parkarea.position.dao.PositionDao">
+
+	<resultMap type="ParkingPosition" id="parkingPositionMap">
+		<id property="parkingId" column="parking_id"></id>
+		<result property="parkingNum" column="parking_num"/>
+		<result property="parkingStatus" column="parking_status"/>
+	</resultMap>
+	
+	<sql id="positionColumns">
+		parking_id,parking_num,parking_status
+	</sql>
+
+	<insert id="addPosition">
+		insert into parking_position(parking_num,parking_status) values(#{parkingNum},2)
+	</insert>
+	
+	<update id="updatePosition">
+		update parking_position
+		<set>
+			<if test="parkingStatus!=null">parking_status = #{parkingStatus},</if>
+			<if test="parkingNum!=null"> parking_num = #{parkingNum} </if>
+		</set>
+		where parking_id = #{parkingId} 
+	</update>
+	
+	<select id="getPosition" resultMap="parkingPositionMap">
+		select <include refid="positionColumns"/> from parking_position
+	</select>
+	
+	<select id="getPositionById" parameterType="int" resultMap="parkingPositionMap">
+		select <include refid="positionColumns"/> from parking_position where parking_id=#{parkingId}
+	</select>
+	
+	<select id="getPositionList" resultMap="parkingPositionMap">
+		select <include refid="positionColumns"/> from parking_position
+	</select>
+	
+	<select id="getPositionPageList" parameterType="java.util.Map" resultMap="parkingPositionMap">
+		select <include refid="positionColumns"/> from parking_position 
+		<where>
+			<if test="parkingStatus!=null and parkingStatus!=''"> parking_status = #{parkingStatus}</if>
+			<if test="parkingNum!=null and parkingNum!=''"> and parking_num=#{parkingNum}</if>
+		</where>
+		limit #{pageIndex},#{pageSize}
+	</select>
+	
+	<select id="getAllCount" parameterType="ParkingPosition" resultType="Integer">
+		select count(*) from parking_position
+		<where>
+			<if test="parkingStatus!=null and parkingStatus!=''"> parking_status = #{parkingStatus}</if>
+			<if test="parkingNum!=null and parkingNum!=''"> and parking_num=#{parkingNum}</if>
+		</where>
+	</select>
+	
+	<select id="checkPositionExist" parameterType="String" resultType="Integer">
+		select count(*) from parking_position where parking_num = #{parkingNum}
+	</select>
+	
+	<delete id="delPosition" parameterType="list" >
+		delete from parking_position where parking_status = 2 and
+		parking_id in
+		<foreach collection="list" item="parkingId"  open="(" separator="," close=")">
+			 #{parkingId}
+		</foreach>
+	</delete>
+</mapper>

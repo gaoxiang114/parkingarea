@@ -6,6 +6,7 @@
 		<typeAlias type="com.parkarea.user.model.User" alias="User"/>
 		<typeAlias type="com.parkarea.park.model.CarInOut" alias="CarInOut"/>
 		<typeAlias type="com.parkarea.position.model.ParkingPosition" alias="ParkingPosition"/>
+		<typeAlias type="com.parkarea.system.model.SystemInfo" alias="SystemInfo"/>
 	</typeAliases>
 	
 
@@ -13,5 +14,6 @@
 		<mapper resource="/mappers/user.xml" />
 		<mapper resource="/mappers/car_in_out.xml"/>
 		<mapper resource="/mappers/parking_position.xml"/>
+		<mapper resource="/mappers/sys_info.xml"/>
 	</mappers>
 </configuration>

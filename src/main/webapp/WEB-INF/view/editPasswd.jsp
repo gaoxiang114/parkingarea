@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="${req.contextPath}/css/theme.css">
     <link rel="stylesheet" href="${req.contextPath}/css/font-awesome/css/font-awesome.css">
 
+	<script type="text/javascript" src="${req.contextPath}/js/common.js"></script>
     <script src="${req.contextPath}/js/jquery-1.7.1.min.js" type="text/javascript"></script>
 
     <style type="text/css">
@@ -54,14 +55,16 @@
     <div class="row-fluid">
     <div class="dialog"> 
         <div class="block">
-            <p class="block-heading">停车场管理信息系统</p>
+            <p class="block-heading">密码修改</p>
             <div class="block-body">
-                <form method="post" action="${req.contextPath}/manager/login">
-                    <label>用户名：</label>
-                    <input type="text" name="username" class="span12">
-                    <label>密  码：</label>
-                    <input type="password" name="passwd" class="span12">
-                    <input type="submit" class="btn btn-primary pull-right" value="登录"/>
+                <form method="post" id="myFrm" action="${req.contextPath}/manager/user/doEditPasswd">
+                    <label>原密码：</label>
+                    <input type="password" name="oldPasswd" id="oldPasswd" class="span12">
+                    <label>确认密码：：</label>
+                    <input type="password" name="againPasswd" id="againPasswd" class="span12">
+                    <label>新密码：：</label>
+                    <input type="password" name="newPasswd" id="newPasswd" class="span12">
+                    <input type="button" id="sub" class="btn btn-primary pull-right" value="修改"/>
                     <div class="clearfix"></div>
                 </form>
             </div>
@@ -72,6 +75,37 @@
     <script src="${req.contextPath}/js/bootstrap.js"></script>
     <script type="text/javascript">
         $("[rel=tooltip]").tooltip();
+        $(function() {
+        	
+        	$("#sub").click(function(){
+        		var oldPasswd = $("#oldPasswd").val();
+            	var againPasswd = $("#againPasswd").val();
+            	var newPasswd = $("#newPasswd").val();
+            	var matter = /^[a-zA-Z]\w{5,17}$/;
+            	if(is_empty(oldPasswd)){
+            		alert("请输入原密码!");
+            		return false;
+            	}
+            	if(is_empty(againPasswd)){
+            		alert("请输入确认密码!");
+            		return false;
+            	}
+            	if(oldPasswd != againPasswd){
+            		alert("两次密码输入的不一致，请重新输入！");
+            		return false;
+            	}
+            	if(is_empty(newPasswd)){
+            		alert("请输入新密码!");
+            		return false;
+            	}
+            	if(is_empty(newPasswd)){
+            		alert("请输入新密码!");
+            		return false;
+            	}
+            	$("#myFrm").submit();
+        	});
+        	
+        });
     </script>
     
   </body>

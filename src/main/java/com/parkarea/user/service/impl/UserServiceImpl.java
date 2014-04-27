@@ -22,4 +22,9 @@ public class UserServiceImpl implements UserService{
 		return userDao.checkUser(user);
 	}
 
+	@Override
+	public void editPasswd(User user) {
+		userDao.editPasswd(user);
+	}
+
 }

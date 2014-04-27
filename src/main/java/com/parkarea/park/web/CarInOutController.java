@@ -1,6 +1,8 @@
 package com.parkarea.park.web;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.parkarea.common.util.ConstantUtil;
 import com.parkarea.common.util.ToolPage;
@@ -41,7 +44,7 @@ public class CarInOutController {
 		try {
 
 			carInOutList = this.carInOutService.getCarInOutPageList(pageIndex, pageSize, carInOut);
-			totalRecord = (Integer)this.carInOutService.getAllCount();
+			totalRecord = (Integer)this.carInOutService.getAllCount(carInOut);
 			
 			parameterNames = new String[]{"carNum","realname","idCard"};
 			parameterValues = new String[]{carInOut.getCarNum(),carInOut.getRealname(),carInOut.getIdCard()};
@@ -70,7 +73,7 @@ public class CarInOutController {
 		try {
 
 			carInOutList = this.carInOutService.getHistoryList(pageIndex, pageSize, carInOut);
-			totalRecord = (Integer)this.carInOutService.getHistoryAllCount();
+			totalRecord = (Integer)this.carInOutService.getHistoryAllCount(carInOut);
 			
 			parameterNames = new String[]{"carNum","realname","idCard"};
 			parameterValues = new String[]{carInOut.getCarNum(),carInOut.getRealname(),carInOut.getIdCard()};
@@ -94,9 +97,10 @@ public class CarInOutController {
 	@RequestMapping(value="doCarInOutAdd",method=RequestMethod.POST)
 	public String doCarInOutAdd(Model model,CarInOut carInOut){
 		carInOut.setPriceHour(Double.valueOf(System.getProperty("parkingMoney")));
+		carInOut.setStartTime(new Date());
 		this.carInOutService.addCarInOut(carInOut);
 		ParkingPosition position = new ParkingPosition();
-		position.setParkingId(carInOut.getParkingId());
+		position.setParkingId(carInOut.getPosition().getParkingId());
 		position.setParkingStatus(1);
 		this.positionService.updatePosition(position);
 		return "redirect:/carInOut/carInOutList";
@@ -119,11 +123,64 @@ public class CarInOutController {
 		CarInOut carInOut = this.carInOutService.getCarInOutById(id);
 		carInOut.setStatus("1");
 		carInOut.setTotalPrice(Double.parseDouble(totalPrice));
+		carInOut.setEndTime(new Date());
 		this.carInOutService.updateCarInOut(carInOut);
 		ParkingPosition position = new ParkingPosition();
-		position.setParkingId(carInOut.getParkingId());
-		position.setParkingStatus(0);
+		position.setParkingId(carInOut.getPosition().getParkingId());
+		position.setParkingStatus(2);
 		this.positionService.updatePosition(position);
-		return "redirect:/carInOut/carInOutList";
+		return "redirect:/carInOut/historyList";
 	}
+	
+	@RequestMapping(value="/parkCarReport",method={RequestMethod.GET,RequestMethod.POST})
+	public String parkCarReport(){
+		return "/park_car_report";
+	}
+	
+	@RequestMapping(value="/getDataByParkCar",method={RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
+	public Object getDataByParkCar(){
+		Map map = this.carInOutService.countParkCarNum();
+		if(map == null){
+			return "0";
+		}
+		return map;
+	}
+	
+	@RequestMapping(value="/parkMoneyReport",method={RequestMethod.GET,RequestMethod.POST})
+	public String parkMoneyReport(){
+		return "/park_money_report";
+	}
+	
+	@RequestMapping(value="/getDataByParkMoney",method={RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
+	public Object getDataByParkMoney(){
+		Map map = this.carInOutService.countParkMoney();
+		if(map == null){
+			return "0";
+		}
+		return map;
+	}
+	
+	@RequestMapping(value="/calcParkMoney",method={RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
+	public Object calcParkMoney(int id){
+		CarInOut carInOut = this.carInOutService.getCarInOutById(id);
+		Date endTime = new Date();
+		long start = carInOut.getStartTime().getTime();
+		long end = endTime.getTime();
+		double hour = (end-start)/(1000*60*60*1.0);
+		double price = hour * carInOut.getPriceHour();
+		carInOut.setEndTime(endTime);
+		carInOut.setTotalPrice((double)Math.round(price));
+		return carInOut;
+	}
+	
+	@RequestMapping(value="/checkCarPark",method={RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
+	public Object checkCarPark(String carNum){
+		Integer count = this.carInOutService.checkCarPark(carNum);
+		return count;
+	}
+	
 }

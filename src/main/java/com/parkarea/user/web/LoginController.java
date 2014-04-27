@@ -2,6 +2,7 @@ package com.parkarea.user.web;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
@@ -33,7 +34,18 @@ public class LoginController {
 			return "/login";
 		}
 		request.getSession().setAttribute("user", _user);
+		request.getSession().setAttribute("parkingLot", System.getProperty("parkingLot"));
 		return "redirect:/manager/user/index";
+	}
+	
+	@RequestMapping(value="/loginOut")
+	public String loginOut(User user,HttpServletRequest request){
+		HttpSession session = request.getSession();
+		if(session.getAttribute("user")!=null){
+			session.removeAttribute("user");
+			session.invalidate();
+		}
+		return "/login";
 	}
 	
 }

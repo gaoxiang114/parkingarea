@@ -15,4 +15,8 @@ public class UserDao extends BaseDao {
 	public User checkUser(User user){
 		return this.getUniqueOne("checkUser", user);
 	}
+	
+	public void editPasswd(User user){
+		this.update("editPasswd", user);
+	}
 }

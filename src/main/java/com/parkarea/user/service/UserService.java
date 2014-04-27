@@ -18,4 +18,6 @@ public interface UserService {
 	 * @return
 	 */
 	public User checkUser(User user);
+	
+	public void editPasswd(User user);
 }

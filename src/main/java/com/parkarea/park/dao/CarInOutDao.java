@@ -49,7 +49,7 @@ public class CarInOutDao extends BaseDao {
 		    	map.put("idCard", carInOut.getIdCard());
 		    	
 			    if(-1 == pageIndex && 0 == pageSize){
-			    	list = this.getList("getCarInOutPageList", map);
+			    	list = this.getList("getCarInOutList", map);
 			    }else{
 			    	list = this.getList("getCarInOutPageList", map);
 			    }
@@ -72,9 +72,9 @@ public class CarInOutDao extends BaseDao {
 		    	map.put("idCard", carInOut.getIdCard());
 		    	
 			    if(-1 == pageIndex && 0 == pageSize){
-			    	list = this.getList("getHistoryList", map);
+			    	list = this.getList("getHistoryCarInOutList", map);
 			    }else{
-			    	list = this.getList("getHistoryList", map);
+			    	list = this.getList("getHistoryPageList", map);
 			    }
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
@@ -83,11 +83,15 @@ public class CarInOutDao extends BaseDao {
 			return  list;
 	}
 	
-	public Integer getHistoryAllCount(){
-		return this.getCount("getHistoryAllCount");
+	public Integer checkCarPark(String carNum){
+		return this.getCount("checkCarPark",carNum);
 	}
 	
-	public Integer getAllCount(){
-		return this.getCount("getCarInOutCounts");
+	public Integer getHistoryAllCount(CarInOut carInOut){
+		return this.getCount("getHistoryAllCount",carInOut);
+	}
+	
+	public Integer getAllCount(CarInOut carInOut){
+		return this.getCount("getCarInOutCounts",carInOut);
 	}
 }

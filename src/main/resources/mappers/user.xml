@@ -24,4 +24,8 @@
 		select <include refid="userColumns"/> from tb_user where user_name=#{username} and passwd=#{passwd}
 	</select>
 	
+	<update id="editPasswd" parameterType="User">
+		update tb_user set passwd = #{passwd} where user_id = #{userId}
+	</update>
+	
 </mapper>

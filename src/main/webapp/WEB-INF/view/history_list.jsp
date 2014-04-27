@@ -54,22 +54,19 @@
         
         <div class="header">
             
-            <h1 class="page-title">进出车管理</h1>
+            <h1 class="page-title">历史管理</h1>
         </div>
         
                 <ul class="breadcrumb">
             <li><a href="${req.contextPath}/manager/user/index">主页</a> <span class="divider">/</span></li>
-            <li class="active">进出车管理</li>
+            <li class="active">历史管理</li>
         </ul>
 
         <div class="container-fluid">
             <div class="row-fluid">
                     
-<div class="btn-toolbar">
-	    <button class="btn btn-primary" onclick="carInOutAdd();"><i class="icon-plus"></i>新增</button>
-	</div>
 <div class="well">
-	<form action="${req.contextPath}/carInOut/carInOutList" method="post" id="searchFrm" style="margin-left: 108px;">
+	<form action="${req.contextPath}/carInOut/historyList" method="post" id="searchFrm" style="margin-left: 108px;">
             <div style="width:908px">
 				<span style="font-size:18px">&nbsp;&nbsp;&nbsp;查询条件：&nbsp;&nbsp;&nbsp;</span>
 				<input type="text" id = "carNum" class="input-block-level" placeholder="请输入车牌号" name="carNum" style="width:200px" />
@@ -90,8 +87,9 @@
           <th>手机</th>
           <th>停车位</th>
           <th>停车时间</th>
+          <th>离开时间</th>
           <th>单价</th>
-          <th>操作</th>
+          <th>停车费用</th>
         </tr>
       </thead>
       <tbody>
@@ -103,8 +101,9 @@
 	          <td>${carInOut.telephone}</td>
 	          <td>${carInOut.position.parkingNum}</td>
 	          <td><fmt:formatDate value="${carInOut.startTime}" pattern="yyyy-MM-dd  HH:mm:ss"/></td>
+	          <td><fmt:formatDate value="${carInOut.endTime}" pattern="yyyy-MM-dd  HH:mm:ss"/></td>
 	          <td>${carInOut.priceHour}/小时</td>
-	          <td><a href="#this" onclick="calcMoney('tr_${carInOut.id}')">结账</a></td>
+	          <td>${carInOut.totalPrice} 元</td>
 	        </tr>
 	   	  </c:forEach>
       </tbody>
@@ -140,33 +139,6 @@
         $("#bn").click(function() {
 			$("#searchFrm").submit();
 		});
-        
-        function calcMoney(tr_id){
-        	var msg;
-        	$.ajax({
-			       type: 'POST',  
-			       url: '${req.contextPath}/carInOut/calcParkMoney?rand='+Math.random(),
-			       data:{"id":tr_id.split("_")[1]},
-			       async:false,
-			       success : function(result){
-			    	   msg = result;
-			       }
-        	});
-        	
-        	var totalTime = (msg.endTime-msg.startTime)*1.0/(1000*60*60)+"";
-        	totalTime=totalTime.substring(0,totalTime.indexOf(".")+3);
-        	var content  = "                    车主姓名："+msg.realname+"\r\n";
-	        	content += "                    车牌号："+msg.carNum+"\r\n";
-	        	content += "                    停车位："+msg.position.parkingNum+"\r\n";
-	        	content += "                    停车时长："+totalTime+"\r\n";
-	        	content += "                    停车费用："+msg.totalPrice+"\r\n";
-	        	content += "                    是否确认结账?";
-        	if(confirm(content)){
-        		$("#id").val(tr_id.split("_")[1]);
-        		$("#totalPrice").val(msg.totalPrice);
-        		$("#myForm").submit();
-        	}
-        }
     </script>
     
   </body>
