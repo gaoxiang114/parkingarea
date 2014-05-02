@@ -140,12 +140,12 @@
     <div class="content">
         
         <div class="header">
-            <h1 class="page-title">进出车管理</h1>
+            <h1 class="page-title">收益统计</h1>
         </div>
         
         <ul class="breadcrumb">
             <li><a href="${req.contextPath}/manager/user/index">主页</a> <span class="divider">/</span></li>
-            <li class="active">进出车管理</li>
+            <li class="active">收益统计</li>
         </ul>
 
         <div class="container-fluid">
